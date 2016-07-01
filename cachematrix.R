@@ -16,7 +16,7 @@ makeCacheMatrix <- function(x = matrix())
 
 
 
-cacheSolve <- function(m=makeCacheMatrix(1:4,nrow=2,ncol=2), ...) 
+cacheSolve <- function(m, ...) 
                 {
                 calinv<-m$getinv()
                 if(!is.null(calinv))
@@ -27,4 +27,5 @@ cacheSolve <- function(m=makeCacheMatrix(1:4,nrow=2,ncol=2), ...)
                 data<-m$get()
                 calinv<-solve(data,...)
                 m$setinv(calinv)
+                calinv
                 }
